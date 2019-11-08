@@ -1,0 +1,17 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.6.5
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: 
+          name: Run test
+          command: rspec
+
+workflows:
+  version: 2
+  workflows:
+    jobs:
